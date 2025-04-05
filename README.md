@@ -28,7 +28,7 @@ Ensure you have the following installed:
 
 1. Clone the repository:
 ```
-	git clone https://github.com/yourusername/StarZInjector.git
+git clone https://github.com/yourusername/StarZInjector.git
 ```
 
 2. Open the solution in Visual Studio 2022.
@@ -36,13 +36,13 @@ Ensure you have the following installed:
 3. Restore the NuGet packages:
 
 ```
-	dotnet restore
+dotnet restore
 ```
 
 4. Build the solution:
 
 ```
-	dotnet build
+dotnet build
 ```
 
 
