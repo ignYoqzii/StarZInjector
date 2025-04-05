@@ -12,7 +12,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/ignYoqzii/StarZInjector">
-    <img src="/Assets/StarZInjector.png" alt="Logo" width="1386" height="250">
+    <img src="/Assets/StarZInjector.png" alt="Logo" width="1386" height="230">
   </a>
 
   <h3 align="center">StarZ Injector</h3>
