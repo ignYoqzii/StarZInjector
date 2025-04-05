@@ -28,7 +28,7 @@ Ensure you have the following installed:
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/StarZInjector.git
+git clone https://github.com/ignYoqzii/StarZInjector.git
 ```
 
 2. Open the solution in Visual Studio 2022.
