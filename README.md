@@ -1,6 +1,27 @@
-# StarZ Injector
+<div align="center">
 
-StarZ Injector is a .NET 9.0 Windows application designed for DLL injection into target processes. It leverages WPF UI (WinUI 3 for WPF) for the user interface and includes features such as theme customization, Discord Rich Presence, and various injection methods.
+<a href="https://github.com/ignYoqzii/StarZInjector/graphs/contributors">![Contributors](https://img.shields.io/github/contributors/ignYoqzii/StarZInjector?style=flat)</a>
+<a href="https://github.com/ignYoqzii/StarZInjector/network/members">![Forks](https://img.shields.io/github/forks/ignYoqzii/StarZInjector?style=flat)</a>
+<a href="https://github.com/ignYoqzii/StarZInjector/stargazers">![Stargazers](https://img.shields.io/github/stars/ignYoqzii/StarZInjector?style=flat)</a>
+<a href="https://github.com/ignYoqzii/StarZInjector/issues">![Issues](https://img.shields.io/github/issues/ignYoqzii/StarZInjector?style=flat)</a>
+<a href="https://github.com/ignYoqzii/StarZInjector/blob/main/LICENSE">![License](https://img.shields.io/github/license/ignYoqzii/StarZInjector?style=flat)</a>
+
+</div>
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Simnico99/MicaWPF">
+    <img src="/Logo/MicaWPFLogo%20-%2080x56.png" alt="Logo" width="80" height="56">
+  </a>
+
+  <h3 align="center">StarZ Injector</h3>
+
+  <p align="center">
+    StarZ Injector is a .NET 9.0 Windows application designed for DLL injection into target processes. It leverages WPF UI (WinUI 3 for WPF) for the user interface and includes features such as theme customization, Discord Rich Presence, and various injection methods.
+    <br />
+  </p>
+</p>
 
 ## Features
 
