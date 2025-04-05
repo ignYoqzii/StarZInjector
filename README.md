@@ -19,7 +19,14 @@
 
   <p align="center">
     StarZ Injector is a .NET 9.0 Windows application designed for DLL injection into target processes. It leverages WPF UI (WinUI 3 for WPF) for the user interface and includes features such as theme customization, Discord Rich Presence, and various injection methods.
-    <br />
+  <br />
+  <br />
+  <br />
+
+  <a href="https://github.com/ignYoqzii/StarZInjector">
+    <img src="/Assets/StarZInjectorScreenShot.png" alt="Logo">
+  </a>
+  <br />
   </p>
 </p>
 
