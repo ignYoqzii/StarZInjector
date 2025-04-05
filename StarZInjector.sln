@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35806.99 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarZInjector", "StarZInjector.csproj", "{4C9A81DD-0E2D-4F24-A492-03872942EEC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C9A81DD-0E2D-4F24-A492-03872942EEC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9A81DD-0E2D-4F24-A492-03872942EEC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9A81DD-0E2D-4F24-A492-03872942EEC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9A81DD-0E2D-4F24-A492-03872942EEC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54762B46-6719-4F3B-BF4F-BF7D24F9A08C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net9.0-windows</TargetFramework>
+		<TargetPlatformMinVersion>7.0</TargetPlatformMinVersion>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
+		<ApplicationIcon>Assets\starz.ico</ApplicationIcon>
+		<UseWPF>true</UseWPF>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Assets\starz.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="MicaWPF" Version="6.3.0" />
+		<PackageReference Include="WPF-UI" Version="4.0.2" />
+		<PackageReference Include="WPF-UI.DependencyInjection" Version="4.0.2" />
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.1" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0 " />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Assets\starz.ico" />
+	</ItemGroup>
+
+</Project>

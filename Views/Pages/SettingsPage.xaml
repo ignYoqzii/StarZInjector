@@ -1,0 +1,236 @@
+﻿<Page
+    x:Class="StarZInjector.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:StarZInjector.Helpers"
+    xmlns:local="clr-namespace:StarZInjector.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SettingsPage"
+    d:DataContext="{d:DesignInstance local:SettingsPage, IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+
+    <StackPanel Margin="0,0,0,50">
+        <ui:TextBlock
+            Margin="0,0,0,10"
+            FontTypography="BodyStrong"
+            Text="Appearance" />
+        <ui:CardControl Margin="0,0,0,10" Icon="{ui:SymbolIcon Color24}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        FontTypography="Body"
+                        Text="App theme" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Select which app theme to display" />
+                </Grid>
+            </ui:CardControl.Header>
+            <ComboBox
+                Grid.Column="1"
+                MinWidth="200"
+                
+                SelectedIndex="{Binding ViewModel.CurrentApplicationTheme, Converter={StaticResource ThemeToIndexConverter}, Mode=TwoWay}">
+                <ComboBoxItem Content="Light" />
+                <ComboBoxItem Content="Dark" />
+                <ComboBoxItem Content="High Contrast" />
+            </ComboBox>
+        </ui:CardControl>
+
+        <ui:TextBlock
+            Margin="0,20,0,10"
+            FontTypography="BodyStrong"
+            Text="Injection" />
+        <ui:CardControl Margin="0,0,0,10" Icon="{ui:SymbolIcon Options24}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        FontTypography="Body"
+                        Text="Injection Method" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Select which injection method to use" />
+                </Grid>
+            </ui:CardControl.Header>
+            <ComboBox
+                Grid.Column="1"
+                MinWidth="200"
+                
+                SelectedIndex="{Binding ViewModel.InjectionMethod, Converter={StaticResource InjectionMethodToIndexConverter}, Mode=TwoWay}">
+                <ComboBoxItem Content="LoadLibraryA" />
+                <ComboBoxItem Content="LoadLibraryW" />
+                <ComboBoxItem Content="LoadLibraryExA" />
+                <ComboBoxItem Content="LoadLibraryExW" />
+            </ComboBox>
+        </ui:CardControl>
+
+        <ui:TextBlock
+            Margin="0,20,0,10"
+            FontTypography="BodyStrong"
+            Text="Discord" />
+        <ui:CardControl Margin="0,0,0,10" Icon="{ui:SymbolIcon Person24}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        FontTypography="Body"
+                        Text="Discord RPC" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Enable or disable Discord Rich Presence" />
+                </Grid>
+            </ui:CardControl.Header>
+            <ui:ToggleSwitch
+                IsChecked="{Binding ViewModel.DiscordRPC, Mode=TwoWay}"
+                OnContent="On"
+                OffContent="Off" />
+        </ui:CardControl>
+        <ui:CardControl Margin="0,0,0,10" Icon="{ui:SymbolIcon Chat24}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        FontTypography="Body"
+                        Text="Discord RPC Status" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Modify your Discord Rich Presence status" />
+                </Grid>
+            </ui:CardControl.Header>
+            <ui:TextBox
+                Text="{Binding ViewModel.DiscordRPCStatus, Mode=TwoWay}"
+                Width="200"
+                PlaceholderText="Custom status" />
+        </ui:CardControl>
+
+        <ui:TextBlock
+            Margin="0,20,0,10"
+            FontTypography="BodyStrong"
+            Text="Other" />
+        <ui:CardControl Margin="0,0,0,10" Icon="{ui:SymbolIcon Folder24}">
+            <ui:CardControl.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        FontTypography="Body"
+                        Text="App Folder" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="Open the app folder" />
+                </Grid>
+            </ui:CardControl.Header>
+            <ui:Button
+                Command="{Binding ViewModel.OpenAppFolderCommand}"
+                Content="Open" />
+        </ui:CardControl>
+
+        <ui:TextBlock
+            Margin="0,20,0,10"
+            FontTypography="BodyStrong"
+            Text="About" />
+        <ui:CardExpander ContentPadding="0" Icon="{ui:ImageIcon /Assets/starz.ico, Width=40, Height=40}">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ui:TextBlock
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        FontTypography="Body"
+                        Text="StarZ Injector" />
+                    <ui:TextBlock
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="© 2025 yoqzii | StarZ Team" />
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Margin="0,0,10,0"
+                        VerticalAlignment="Center"
+                        Foreground="{ui:ThemeResource TextFillColorSecondaryBrush}"
+                        Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
+                </Grid>
+            </ui:CardExpander.Header>
+            <StackPanel>
+                <ui:Anchor
+                    Margin="0"
+                    Padding="16"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Stretch"
+                    Background="Transparent"
+                    BorderThickness="0,1,0,0"
+                    CornerRadius="0"
+                    NavigateUri="">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ui:TextBlock Grid.Column="0" Text="Found a bug? Report it there" />
+                        <ui:SymbolIcon Grid.Column="1" Symbol="Link24" />
+                    </Grid>
+                </ui:Anchor>
+                <ui:Anchor
+                    Margin="0"
+                    Padding="16"
+                    HorizontalAlignment="Stretch"
+                    HorizontalContentAlignment="Stretch"
+                    Background="Transparent"
+                    BorderThickness="0,1,0,1"
+                    CornerRadius="0"
+                    NavigateUri="">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ui:TextBlock Grid.Column="0" Text="Github repository" />
+                        <ui:SymbolIcon Grid.Column="1" Symbol="Link24" />
+                    </Grid>
+                </ui:Anchor>
+                <ui:TextBlock Margin="16" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
+            </StackPanel>
+        </ui:CardExpander>
+    </StackPanel>
+</Page>
