@@ -11,8 +11,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/Simnico99/MicaWPF">
-    <img src="/Logo/MicaWPFLogo%20-%2080x56.png" alt="Logo" width="80" height="56">
+  <a href="https://github.com/ignYoqzii/StarZInjector">
+    <img src="/Assets/StarZInjector.png" alt="Logo" width="1386" height="290">
   </a>
 
   <h3 align="center">StarZ Injector</h3>
