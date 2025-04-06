@@ -104,6 +104,7 @@
                 </Grid>
             </ui:CardControl.Header>
             <ui:ToggleSwitch
+                x:Name="DiscordRPCToggleSwitch"
                 IsChecked="{Binding ViewModel.DiscordRPC, Mode=TwoWay}"
                 OnContent="On"
                 OffContent="Off" />
@@ -126,6 +127,8 @@
                 </Grid>
             </ui:CardControl.Header>
             <ui:TextBox
+                x:Name="DiscordRPCStatusTextBox"
+                IsEnabled="{Binding ViewModel.DiscordRPC, Mode=OneWay}"
                 Text="{Binding ViewModel.DiscordRPCStatus, Mode=TwoWay}"
                 Width="200"
                 PlaceholderText="Custom status" />

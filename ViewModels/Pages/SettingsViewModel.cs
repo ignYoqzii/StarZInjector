@@ -17,7 +17,7 @@ namespace StarZInjector.ViewModels.Pages
         private ApplicationTheme _currentApplicationTheme = ParseTheme(ConfigManager.GetTheme());
 
         [ObservableProperty]
-        private bool _discordRPC = ConfigManager.GetDiscordRPC();
+        public bool _discordRPC = ConfigManager.GetDiscordRPC();
 
         [ObservableProperty]
         private string _discordRPCStatus = ConfigManager.GetDiscordRPCStatus();
