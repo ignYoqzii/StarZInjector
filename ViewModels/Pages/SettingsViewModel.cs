@@ -1,8 +1,8 @@
 ﻿using Wpf.Ui.Appearance;
 using Wpf.Ui.Abstractions.Controls;
-using System.Windows.Media;
 using StarZInjector.Classes;
 using System.IO;
+using StarZFinance.Classes;
 
 namespace StarZInjector.ViewModels.Pages
 {
@@ -17,13 +17,13 @@ namespace StarZInjector.ViewModels.Pages
         private ApplicationTheme _currentApplicationTheme = ParseTheme(ConfigManager.GetTheme());
 
         [ObservableProperty]
-        private bool _discordRPC = false;
+        private bool _discordRPC = ConfigManager.GetDiscordRPC();
 
         [ObservableProperty]
-        private string _discordRPCStatus = "In the Injector";
+        private string _discordRPCStatus = ConfigManager.GetDiscordRPCStatus();
 
         [ObservableProperty]
-        private string _injectionMethod = "LoadLibraryA";
+        private string _injectionMethod = ConfigManager.GetInjectionMethod();
 
         public Task OnNavigatedToAsync()
         {
@@ -71,12 +71,29 @@ namespace StarZInjector.ViewModels.Pages
         {
             DiscordRPC = newValue;
             ConfigManager.SetDiscordRPC(newValue);
+            if (newValue)
+            {
+                if (!DiscordRichPresenceManager.DiscordClient.IsInitialized)
+                {
+                    DiscordRichPresenceManager.DiscordClient.Initialize();
+                }
+                DiscordRichPresenceManager.SetPresence();
+            }
+            else
+            {
+                DiscordRichPresenceManager.DiscordClient.ClearPresence();
+            }
         }
 
         partial void OnDiscordRPCStatusChanged(string? oldValue, string newValue)
         {
             DiscordRPCStatus = newValue;
             ConfigManager.SetDiscordRPCStatus(newValue);
+
+            if (DiscordRPC)
+            {
+                DiscordRichPresenceManager.SetState(newValue);
+            }
         }
 
         partial void OnInjectionMethodChanged(string? oldValue, string newValue)

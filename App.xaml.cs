@@ -13,6 +13,7 @@ using Wpf.Ui;
 using Wpf.Ui.DependencyInjection;
 using StarZInjector.Classes;
 using Wpf.Ui.Appearance;
+using StarZFinance.Classes;
 
 namespace StarZInjector
 {
@@ -67,6 +68,19 @@ namespace StarZInjector
         /// </summary>
         private async void OnStartup(object sender, StartupEventArgs e)
         {
+            try
+            {
+                if (ConfigManager.GetDiscordRPC())
+                {
+                    DiscordRichPresenceManager.DiscordClient.Initialize();
+                    DiscordRichPresenceManager.SetPresence();
+                }
+            }
+
+            catch (Exception)
+            {
+                // Handle exception if needed
+            }
             await _host.StartAsync();
 
             string appThemeString = ConfigManager.GetTheme();
@@ -86,6 +100,14 @@ namespace StarZInjector
         /// </summary>
         private async void OnExit(object sender, ExitEventArgs e)
         {
+            try
+            {
+                DiscordRichPresenceManager.TerminatePresence();
+            }
+            catch (Exception)
+            {
+                // Handle exception if needed
+            }
             await _host.StopAsync();
 
             _host.Dispose();
